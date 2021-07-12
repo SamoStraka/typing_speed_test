@@ -1,4 +1,5 @@
 <script>
+	import EditForm from "./components/EditForm.svelte";
 	export let name;
 </script>
 
@@ -8,7 +9,7 @@
 	<h3>Typing Speed Test</h3>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-
+<EditForm></EditForm>
 <style>
 	main {
 		text-align: center;
