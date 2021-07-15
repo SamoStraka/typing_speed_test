@@ -1,6 +1,11 @@
 <script>
 	import EditForm from "./components/EditForm.svelte";
-	export let name;
+
+	let editForm = {
+		language : '',
+		length : 0,
+		submitted : false
+	}
 </script>
 
 <main>
@@ -9,7 +14,13 @@
 	<h3>Typing Speed Test</h3>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
-<EditForm></EditForm>
+{#if !editForm.submitted}
+	<EditForm bind:editFrom={editForm}></EditForm>
+{:else}
+	<p>
+		{editForm.language} ano toto je language a bude to trvat: {editForm.length}
+	</p>
+{/if}
 <style>
 	main {
 		text-align: center;

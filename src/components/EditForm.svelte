@@ -1,18 +1,36 @@
 <script>
+    //imports
+    import {createEventDispatcher} from  'svelte';
+
+    //exports
+    export let editFrom;
+
     let value;
 
-    const submit = () => {
-        alert(value);
+    const dispatch = createEventDispatcher();
 
+    const submit = () => {
+        dispatch('submit');
+
+        editFrom.language = document.getElementById("editFromLanguage").value;
+        editFrom.length = document.getElementById("editFromLength").value;
+        editFrom.submitted = true;
     }
 </script>
 <style>
 
 </style>
 <div>
-    <form action="index.html" on:submit={submit} method="post" >
-        <input type="text" bind:value={value}>
-        <input type="submit" value="Submit me now">
+    <form on:submit|preventDefault={submit}>
+        <select name="language" id="editFromLanguage" >
+            <option value="eng">English</option>
+            <option value="svk">Slovak</option>
+        </select>
+        <select name="length" id="editFromLength" >
+            <option value="secs">30 sec.</option>
+            <option value="minute">1 min.</option>
+        </select>
+        <input name="submit" type="submit" value="Edit">
     </form>
     {#if value}
         <p>
