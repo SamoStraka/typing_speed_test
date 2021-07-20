@@ -30,7 +30,7 @@
             <option value="secs">30 sec.</option>
             <option value="minute">1 min.</option>
         </select>
-        <input name="submit" type="submit" value="Edit">
+        <input name="submit" type="submit" value="Submit">
     </form>
     {#if value}
         <p>

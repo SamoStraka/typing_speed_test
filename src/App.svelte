@@ -1,11 +1,15 @@
 <script>
 	import EditForm from "./components/EditForm.svelte";
 
+	import {createArrayOfWordSet, pickRandomWord} from "./functions";
+
 	let editForm = {
 		language : '',
 		length : 0,
 		submitted : false
 	}
+
+	let wordSet = [];
 </script>
 
 <main>
