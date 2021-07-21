@@ -1,12 +1,12 @@
 <script>
 	import EditForm from "./components/EditForm.svelte";
 
-	import {createArrayOfWordSet, pickRandomWord} from "./functions";
+	import TypingPart from "./components/TypingPart.svelte";
 
 	let editForm = {
-		language : '',
-		length : 0,
-		submitted : false
+		language: '',
+		timeLength: 0,
+		submitted: false
 	}
 
 	let wordSet = [];
@@ -19,11 +19,9 @@
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 {#if !editForm.submitted}
-	<EditForm bind:editFrom={editForm}></EditForm>
+	<EditForm bind:editForm={editForm}></EditForm>
 {:else}
-	<p>
-		{editForm.language} ano toto je language a bude to trvat: {editForm.length}
-	</p>
+	<TypingPart bind:editForm={editForm}></TypingPart>
 {/if}
 <style>
 	main {

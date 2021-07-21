@@ -3,7 +3,7 @@
     import {createEventDispatcher} from  'svelte';
 
     //exports
-    export let editFrom;
+    export let editForm;
 
     let value;
 
@@ -12,9 +12,9 @@
     const submit = () => {
         dispatch('submit');
 
-        editFrom.language = document.getElementById("editFromLanguage").value;
-        editFrom.length = document.getElementById("editFromLength").value;
-        editFrom.submitted = true;
+        editForm.language = document.getElementById("editFromLanguage").value;
+        editForm.timeLength = document.getElementById("editFromLength").value;
+        editForm.submitted = true;
     }
 </script>
 <style>
@@ -27,8 +27,8 @@
             <option value="svk">Slovak</option>
         </select>
         <select name="length" id="editFromLength" >
-            <option value="secs">30 sec.</option>
-            <option value="minute">1 min.</option>
+            <option value="30000">30 sec.</option>
+            <option value="60000">1 min.</option>
         </select>
         <input name="submit" type="submit" value="Submit">
     </form>
